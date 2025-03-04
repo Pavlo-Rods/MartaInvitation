@@ -1,20 +1,33 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "invitation-marta",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "client": "file:",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.0"
+    "@fontsource/pinyon-script": "^5.1.1",
+    "@vis.gl/react-google-maps": "^1.5.1",
+    "eslint": "^6.1.0",
+    "invitation-marta": "file:",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-google-forms-hooks": "^1.2.4",
+    "react-parallax": "^3.5.1",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.10",
+    "@types/react-dom": "^17.0.4"
   },
   "scripts": {
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-    "predeploy": "set NODE_OPTIONS=--openssl-legacy-provider && npm run build",
-    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
