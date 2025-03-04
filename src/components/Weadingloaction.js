@@ -17,7 +17,7 @@ const Weadingloaction = () => {
 						<div className="w-detail right">
 							<i className="icon icon-ciurclke"></i>
 							<h4 className="title">CEREMONIA</h4>
-                            <p>Hora  1:00</p>
+                            <p>Hora  12:00</p>
                             <p>Salón Colón, ayuntamiento de Sevilla</p>
                             <p>
 							<div className="map-responsive">
@@ -29,9 +29,9 @@ const Weadingloaction = () => {
 						
 						<div className="w-detail left">
 							<i className="icon icon-wine-glass"></i>
-							<h4 className="title">CONVITE</h4>
-							<p>Hora 15:00</p>
-							<p>Palacio de los 7 balcnes</p>
+							<h4 className="title">CELEBRACIÓN</h4>
+							<p>Hora 13:30</p>
+							<p>Palacio de los 7 balcones</p>
 							<p>
 							<div className="map-responsive">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.1031744083475!2d-6.055405288036125!3d37.387392234262876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126d8cea574147%3A0xc097a34ea2eb54b6!2sPalacio%207%20Balcones!5e0!3m2!1ses!2ses!4v1740834898539!5m2!1ses!2ses" width="600" height="450" frameBorder="0" style={{border:0}} allowFullScreen=""></iframe>
