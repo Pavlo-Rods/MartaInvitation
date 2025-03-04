@@ -1,8 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://2manoj1.github.io/weddinginvitation",
+  "main": "index.js",
   "dependencies": {
     "client": "file:",
     "gh-pages": "^2.1.1",
