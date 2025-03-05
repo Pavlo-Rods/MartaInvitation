@@ -17,7 +17,7 @@ const Weadingloaction = () => {
 						<div className="w-detail right">
 							<i className="icon icon-ciurclke"></i>
 							<h4 className="title">CEREMONIA</h4>
-                            <p>Hora  12:00</p>
+                            <p>Hora  13:30</p>
                             <p>Salón Colón, ayuntamiento de Sevilla</p>
                             <p>
 							<div className="map-responsive">
@@ -30,7 +30,7 @@ const Weadingloaction = () => {
 						<div className="w-detail left">
 							<i className="icon icon-wine-glass"></i>
 							<h4 className="title">CELEBRACIÓN</h4>
-							<p>Hora 13:30</p>
+							<p>Tras la ceremonia</p>
 							<p>Palacio de los 7 balcones</p>
 							<p>
 							<div className="map-responsive">
