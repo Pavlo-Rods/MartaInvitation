@@ -17,7 +17,6 @@ function App() {
      <CountDown />
      <Weadingloaction />
      <GForm />
-     <Contact />
     </div>
   );
 }
