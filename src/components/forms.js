@@ -1,106 +1,114 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, {useState} from "react";
+import "../commoncss/GoogleForm.css";
 
-const GForm = () => {
+const GoogleForm = () => {
   const [formData, setFormData] = useState({
-    asistencia: '',
-    asistentes: '',
-    alergias: {
-      frutosSecos: false,
-      lactosa: false,
-      gluten: false,
-      otro: '',
-    },
-  });
+    nombre: "",
+    asistencia: "",
+    asistentes: "",
+    alergias: [],
+    otrasAlergias: "",
+  }); 
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      setFormData({
-        ...formData,
-        alergias: {
-          ...formData.alergias,
-          [name]: checked,
-        },
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // Si el usuario está escribiendo en "Otras Alergias", actualiza la lista de alergias
+    if (name === "otrasAlergias") {
+      setFormData((prev) => {
+        let nuevasAlergias = prev.alergias.filter((a) => !a.startsWith("Otros:")); // Borra versiones previas
+        if (value.trim() !== "") {
+          nuevasAlergias.push(`Otros: ${value}`);
+        }
+        return { ...prev, alergias: nuevasAlergias };
       });
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleCheckboxChange = (e) => {
+    const { value, checked } = e.target;
+    setFormData((prev) => {
+      let nuevasAlergias = checked
+        ? [...prev.alergias, value] // Añadir si está marcado
+        : prev.alergias.filter((alergia) => alergia !== value); // Quitar si se desmarca
+
+      return { ...prev, alergias: nuevasAlergias };
+    });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formPayload = new URLSearchParams();
-    formPayload.append('entry.1234567890', formData.asistencia); // Reemplaza con el nombre real del campo
-    formPayload.append('entry.0987654321', formData.asistentes); // Reemplaza con el nombre real del campo
-    formPayload.append('entry.1122334455', formData.alergias.frutosSecos ? 'Frutos Secos' : ''); // Reemplaza con el nombre real del campo
-    formPayload.append('entry.2233445566', formData.alergias.lactosa ? 'Lactosa' : ''); // Reemplaza con el nombre real del campo
-    formPayload.append('entry.3344556677', formData.alergias.gluten ? 'Gluten' : ''); // Reemplaza con el nombre real del campo
+    var googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLScDyvhuXmQoXbgVn6KaBz3pTHQFHrqzpr7yWf1L3WHpzUY6UQ/formResponse";
 
-    try {
-      await axios.post('/.netlify/functions/cors-proxy', formPayload);
-      alert('Formulario enviado con éxito');
-    } catch (error) {
-      console.error('Error al enviar el formulario', error);
-    }
+    googleFormURL += "?entry.1092877632=" + formData.nombre;
+    googleFormURL += "&entry.1843499636=" + formData.asistencia; 
+    googleFormURL += "&entry.715290076=" + formData.asistentes;
+    googleFormURL += "&entry.115438155=" + formData.alergias.join(", ");
+
+    const formBody = new URLSearchParams();
+    formBody.append("entry.1092877632", formData.nombre);
+    formBody.append("entry.1843499636", formData.asistencia);
+    formBody.append("entry.715290076", formData.asistentes);
+    formBody.append("entry.115438155", formData.alergias.join(", "));
+
+
+    fetch(googleFormURL, {
+      method: "POST",
+      mode: "no-cors",
+    })
+      .then(() => alert("Gracias " + formData.nombre + " por confirmar tu asistencia"))
+      .catch((error) => alert("Error al enviar el formulario"));
   };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Confirma tu asistencia:</label>
-        <select name="asistencia" value={formData.asistencia} onChange={handleChange}>
-          <option value="">Selecciona una opción</option>
-          <option value="Si, asistiré">Si, asistiré</option>
-          <option value="No, no puedo asistir">No, no puedo asistir</option>
-        </select>
+    <div className="form-container">
+      <div className="form-card">
+        <h2>Confirmanos tu asistencia</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} required />
+          </div>
+
+          <div className="form-group">
+            <label>¿Asistirás?</label>
+            <select name="asistencia" value={formData.asistencia} onChange={handleChange} required>
+              <option value="">Selecciona...</option>
+              <option value="Si">Sí</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>¿Vendrás acompañado?</label>
+            <select name="asistentes" value={formData.asistentes} onChange={handleChange}>
+              <option value="">Selecciona...</option>
+              <option value="Si">Sí</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Alergias:</label>
+            <div className="checkbox-group">
+              {["Frutos secos", "Lactosa", "Gluten", "Otros"].map((alergia) => (
+                <label key={alergia}>
+                  <input type="checkbox" value={alergia} onChange={handleCheckboxChange} />
+                  {alergia}
+                </label>
+              ))}
+            </div>
+            {formData.alergias.includes("Otros") && (
+              <input type="text" name="otrasAlergias" placeholder="Especificar otras alergias" value={formData.otrasAlergias} onChange={handleChange} />
+            )}
+          </div>
+
+          <button type="submit">Confirmar Asistencia</button>
+        </form>
       </div>
-      <div>
-        <label>Asistentes:</label>
-        <input
-          type="text"
-          name="asistentes"
-          value={formData.asistentes}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label>Alergias o Intolerancias:</label>
-        <div>
-          <input
-            type="checkbox"
-            name="frutosSecos"
-            checked={formData.alergias.frutosSecos}
-            onChange={handleChange}
-          />
-          <label>Frutos Secos (Almendras, Nueces, Cacahuete, etc)</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="lactosa"
-            checked={formData.alergias.lactosa}
-            onChange={handleChange}
-          />
-          <label>Lactosa</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="gluten"
-            checked={formData.alergias.gluten}
-            onChange={handleChange}
-          />
-          <label>Gluten</label>
-        </div>
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
+    </div>
   );
 };
 
-export default GForm;
+export default GoogleForm;
