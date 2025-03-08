@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 exports.handler = async (event) => {
-  const formUrl = 'https://docs.google.com/forms/d/e/1Z5IQ05AxTky-BcTvZYcDFKdr42Ln9ybr-A_xGjA10_M/formResponse';
+  const formUrl = 'https://forms.gle/ZYQUYjX55cni53Zy9';
   const formPayload = new URLSearchParams(event.body);
 
   console.log('Received event:', event);
