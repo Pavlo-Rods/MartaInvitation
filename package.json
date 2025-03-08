@@ -8,21 +8,29 @@
   "dependencies": {
     "@fontsource/pinyon-script": "^5.1.1",
     "@vis.gl/react-google-maps": "^1.5.1",
+    "axios": "^1.8.2",
+    "body-parser": "^1.20.3",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "eslint": "^6.1.0",
+    "express": "^4.21.2",
     "invitation-marta": "file:",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-forms-hooks": "^1.2.4",
+    "react-native": "^0.7.1",
+    "react-native-webview": "^13.13.2",
     "react-parallax": "^3.5.1",
     "react-scripts": "^5.0.1",
-    "styled-components": "^6.1.15"
+    "styled-components": "^6.1.15",
+    "webview": "^1.1.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.10",
     "@types/react-dom": "^17.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --no-source-maps",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
