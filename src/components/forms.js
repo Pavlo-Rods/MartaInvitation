@@ -6,6 +6,7 @@ const GoogleForm = () => {
     nombre: "",
     asistencia: "",
     asistentes: "",
+    numAsistentes: "",
     alergias: [],
     otrasAlergias: "",
   }); 
@@ -52,6 +53,7 @@ const GoogleForm = () => {
     googleFormURL += "?entry.1092877632=" + formData.nombre;
     googleFormURL += "&entry.1843499636=" + formData.asistencia; 
     googleFormURL += "&entry.715290076=" + formData.asistentes;
+    googleFormURL += "&entry.914207409=" + formData.numAsistentes;
     googleFormURL += "&entry.115438155=" + formData.alergias.join(", ");
 
     const formBody = new URLSearchParams();
@@ -95,6 +97,12 @@ const GoogleForm = () => {
               <option value="Si">Sí</option>
               <option value="No">No</option>
             </select>
+            {formData.asistentes === "Si" && (
+              <div className="form-group">
+              <label>¿Por cuanta gente?</label>
+              <input type="number" placeholder="" name="numAsistentes" value={formData.numAsistentes} onChange={handleChange} required />
+              </div>
+            )}
           </div>
 
           <div className="form-group">
