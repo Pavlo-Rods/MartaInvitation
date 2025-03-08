@@ -77,7 +77,7 @@ body {
 
   /* Estilos para los checkboxes */
   .checkbox-group input {
-    margin-right: 5px; /* Espacio entre el checkbox y la etiqueta */
+    margin-right: 0.2vw; /* Espacio entre el checkbox y la etiqueta */
   }
   
   /* Botón */
