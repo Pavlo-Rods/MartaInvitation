@@ -40,6 +40,13 @@ const GoogleForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (formData.asistencia === "No") {
+      setFormData((prev) => ({
+        ...prev,
+        asistentes: "No",
+      }));
+    }
+
     var googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLScDyvhuXmQoXbgVn6KaBz3pTHQFHrqzpr7yWf1L3WHpzUY6UQ/formResponse";
 
     googleFormURL += "?entry.1092877632=" + formData.nombre;
@@ -82,7 +89,8 @@ const GoogleForm = () => {
 
           <div className="form-group">
             <label>¿Vendrás acompañado?</label>
-            <select name="asistentes" value={formData.asistentes} onChange={handleChange}>
+            <select name="asistentes" value={formData.asistentes} onChange={handleChange} required={formData.asistencia === "Si"} // Conditionally set "required"
+              disabled={formData.asistencia === "No"} >
               <option value="">Selecciona...</option>
               <option value="Si">Sí</option>
               <option value="No">No</option>
