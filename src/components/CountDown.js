@@ -7,7 +7,7 @@ const CountDown = () => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     useEffect(() => {
-        const countDownDate = new Date("Sept 13, 2025 22:53:35").getTime();
+        const countDownDate = new Date("Sept 13, 2025 14:30:00").getTime();
         const x = setInterval(() => {
 
             // Get today's date and time
