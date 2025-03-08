@@ -60,21 +60,24 @@ body {
     border-color: #e91e63;
   }
   
-  /* Checkboxes */
+  /* Contenedor de las alergias */
   .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: flex; /* Usamos flex para colocar los checkboxes en una fila */
+    gap: 15px; /* Espacio entre los checkboxes */
+    flex-wrap: wrap; /* Permite que los checkboxes se acomoden si es necesario */
+    margin-top: 10px;
   }
-  
+
+  /* Cada checkbox será alineado correctamente en la fila */
   .checkbox-group label {
     display: flex;
-    align-items: center;
+    align-items: center;  /* Alinea el checkbox y el texto verticalmente */
     font-size: 14px;
   }
-  
+
+  /* Estilos para los checkboxes */
   .checkbox-group input {
-    margin-right: 5px;
+    margin-right: 5px; /* Espacio entre el checkbox y la etiqueta */
   }
   
   /* Botón */
