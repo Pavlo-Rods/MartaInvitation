@@ -34,6 +34,7 @@ const WeadingDate = () => {
                         <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script'}}>
                             Y de pronto llegará alguien que baile contigo aunque no le guste bailar y lo haga porque es contigo y nada mas
                             </h3>
+                            <h3 className="pre-title" style={{fontSize: '5vw', fontFamily: 'Pinyon Script'}}>~ Jorge Luis Borges</h3>
 
                     </div>
 			</div>
