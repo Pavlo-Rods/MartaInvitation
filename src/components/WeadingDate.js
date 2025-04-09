@@ -28,13 +28,14 @@ const WeadingDate = () => {
                     
                     <div className="slider-content">
 
-                        <img className="sindur-dan" src={boda} alt="couple" style={{marginLeft: '15%'}}/>
-                        <h5 className="date" style={{fontFamily: 'Pinyon Script'}}>13 de Septiembre del 2025</h5>
-                        <h1 className="title" style={{fontFamily: 'Pinyon Script'}}>Marta   <img className="sindur-dan" src={hearths} alt="hearths"/> Jaime</h1>
-                        <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script'}}>
-                            Y de pronto llegará alguien que baile contigo aunque no le guste bailar y lo haga porque es contigo y nada mas
+                        <h5 className="date" style={{fontFamily: 'Pinyon Script', color: '#5e0416'}}>13 de Septiembre del 2025</h5>
+                        <h1 className="title" style={{fontFamily: 'Pinyon Script', color: '#5e0416'}}>Marta   <img className="sindur-dan" src={hearths} alt="hearths"/> Jaime</h1>
+                        <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416', textAlign:'left', marginLeft: '2vw'}}>
+                            Y de repente llegará alguien que baile contigo,
                             </h3>
-                            <h3 className="pre-title" style={{fontSize: '5vw', fontFamily: 'Pinyon Script'}}>~ Jorge Luis Borges</h3>
+                            <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416', textAlign:'left',marginLeft: '2vw'}}>Aunque no le guste bailar,</h3>
+                            <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416', textAlign:'left', marginLeft: '2vw'}}>Y lo haga porque es contigo y nada mas</h3>
+                            <h3 className="pre-title" style={{fontSize: '5vw', fontFamily: 'Pinyon Script', color: '#5e0416', textAlign:'right', marginRight: '2vw'}}>~ Jorge Luis Borges</h3>
 
                     </div>
 			</div>

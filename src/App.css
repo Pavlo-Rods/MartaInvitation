@@ -209,7 +209,7 @@ header .main-menu li.drop-down a.mouseover + ul.drop-down-menu{ display: block;
 --------------------------------- */
 
 .main-slider{ height: 100vh; position: relative; z-index: 1; 
-	background-image: url(./images/background.jpg); background-size: cover; background-repeat: repeat;color: #fff; } 
+	 background-size: cover; background-repeat: repeat;color: #ffff; background-color: #ffff; } 
 
 .main-slider:after{ content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; 
 	z-index: -1; background: rgba(0,0,0,.3); }
