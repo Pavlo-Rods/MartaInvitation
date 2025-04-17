@@ -8,6 +8,7 @@ import CountDown from './components/CountDown';
 import Weadingloaction from './components/Weadingloaction'
 import Contact from './components/Contact';
 import GForm from './components/forms';
+import WeadingPhrase from './components/WeadingPhrase';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
      <WeadingDate />
      <CountDown />
      <Weadingloaction />
+     <WeadingPhrase />
      <GForm />
     </div>
   );
