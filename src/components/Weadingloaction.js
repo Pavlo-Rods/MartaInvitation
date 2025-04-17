@@ -8,7 +8,7 @@ const Weadingloaction = () => {
 				<div className="col-sm-10">
 					
 					<div className="heading">
-						<h2 className="title">Wedding & Reception Details</h2>
+						<h2 className="title">Lugar de la celebración</h2>
 						<span className="heading-bottom"><i className="icon icon-star"></i></span>
 					</div>
 					
