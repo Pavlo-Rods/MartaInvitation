@@ -37,8 +37,6 @@ const WeadingDate = () => {
                             <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416', textAlign:'left', marginLeft: '2vw'}}>Y lo haga porque es contigo y nada mas</h3>
                             <h3 className="pre-title" style={{fontSize: '5vw', fontFamily: 'Pinyon Script', color: '#5e0416', textAlign:'right', marginRight: '2vw'}}>~ Jorge Luis Borges</h3>
 
-                            <h4 style={{fontSize: '4vw', fontFamily: 'Pinyon Script', color: '#5e0416', marginTop: '2vh'}}>ES05 2100 8436 4702 0114 7428</h4>
-
                     </div>
 			</div>
 		</div>
