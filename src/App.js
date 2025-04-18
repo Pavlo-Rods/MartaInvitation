@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+    <WeadingDate />
      <CountDown />
      <Weadingloaction />
      <WeadingPhrase />
