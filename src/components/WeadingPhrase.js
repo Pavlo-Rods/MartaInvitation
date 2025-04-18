@@ -19,7 +19,7 @@ const WeadingPhrase = () => {
                         <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416',}}>
                             Sin vosotros esto no sería igual.
                             </h3>
-                            <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416'}}>Gracias por vuestra compañía en esta nueva etáà que comenzamos</h3>
+                            <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416'}}>Gracias por vuestra compañía en esta nueva etapa que comenzamos</h3>
                             <h3 className="pre-title" style={{fontSize: '6vw', fontFamily: 'Pinyon Script', color: '#5e0416'}}>El regalo es opcional. La asistencia obligatoria</h3>
                             <h3 className="pre-title" style={{fontSize: '5vw', fontFamily: 'Pinyon Script', color: '#5e0416'}}>Pero si queréis tener un detalle con nosotros,</h3>
                             <h3 className="pre-title" style={{fontSize: '5vw', fontFamily: 'Pinyon Script', color: '#5e0416'}}>¡Sumad kilómetros a nuestro viaje!</h3>
